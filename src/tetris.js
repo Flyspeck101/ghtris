@@ -1,1 +1,1 @@
-import * as Board from "./src/board.js";
+import * as Board from "./board.js";
