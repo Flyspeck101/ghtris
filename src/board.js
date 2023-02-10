@@ -1,4 +1,4 @@
-import * as Mino from "./src/mino.js";
+import * as Mino from "./mino.js";
 
 function Board() {
   let board = [];
