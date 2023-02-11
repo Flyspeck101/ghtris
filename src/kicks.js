@@ -139,6 +139,6 @@ let SRSplus = {
             -1
         ]
     }
-}
+};
 
 export { SRSplus };
