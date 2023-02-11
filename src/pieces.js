@@ -8,11 +8,12 @@ Mino.keys.forEach(element => {
     create() {
       return {
         "rotations": {},
-      "rotation": 0
+        "rotation": 0
       
-      rotate(rotationAmount) {
-        // TODO: Rotation code 
-        this["rotation"] = (this["rotation"] + rotationAmount) % 4;
+        rotate(rotationAmount) {
+          // TODO: Rotation code 
+          this["rotation"] = (this["rotation"] + rotationAmount) % 4;
+        }
       }
    }
 });
