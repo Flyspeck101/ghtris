@@ -1,2 +1,2 @@
-import * from "./board.js";
-import * from "./currentPieceBoard.js";
+import { Board } from "./board.js";
+import {} from "./currentPieceBoard.js";
