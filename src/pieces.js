@@ -27,7 +27,7 @@ let spawnPositions = {
 let rotationData = {
   "Z": {
       "01": [
-          -1,
+          3,
           9,
           -20,
           -21
@@ -108,14 +108,30 @@ Mino.keys.forEach(element => {
   if (Mino[element] == 0 || Mino[element] == 8) return;
   Piece[element] = {
     "mino": Mino[element]
-    create() {
+    create(board) {
       return {
+        "mino": Mino[element],
+        "board": board, 
         "rotation": 0, 
-        "minos": spawnPositions[element];
+        "minos": spawnPositions[element], 
       
         rotate(rotationAmount) {
           // TODO: Rotation code 
+          
           let previousRotation = this["rotation"];
+          let newRotation = (this["rotation"] + rotationAmount) % 4;
+          let rotationCode = previousRotation.toString() + newRotation.toString(); 
+          
+          // Kicks 
+          
+          let canKick = true; 
+          for (let index = 0; index < this.minos.length; index++) {
+            if (this.board.distLeftWall(minos[index]) < -rotationData[this["mino"]][rotationCode][index]) {
+              canKick = false; 
+              break;
+            }
+          }
+          
           this["rotation"] = (this["rotation"] + rotationAmount) % 4;
         }
       }
